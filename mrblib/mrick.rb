@@ -104,7 +104,15 @@ module HTTP
     end
 
     def start
-      @server = TCPServer.new(@port)
+      begin
+        @server = TCPServer.new(@port)
+      rescue RuntimeError
+        puts "MRick could not bind to Port #{@port}"
+        return nil
+      end
+
+      puts "MRick started on http://0.0.0.0:#{@port}"
+
       while c = @server.accept
         res = Response.new
         req = Request.new(c)
