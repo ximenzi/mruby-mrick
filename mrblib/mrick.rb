@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 module HTTP
   LINE_BREAK = "\r\n"
   CONTENT_LENGTH = 'CONTENT-LENGTH'
@@ -132,8 +130,6 @@ module HTTP
                 servlet.do_POST(req, res)
               end
             rescue Exception => e
-              puts "Exception: #{e.message}"
-              puts e.backtrace.join("\n")
               # An Error occured during executing the Servlet
               code = '500 Internal Server Error'
               if @servlets[500].nil?
