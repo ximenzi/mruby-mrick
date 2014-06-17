@@ -1,6 +1,16 @@
 mruby-mrick
 ===========
 
+Pure Ruby Webserver GEM for mruby.
+
+**very alpha!!**
+
+## Features
+
+* GET HTTP Method
+* POST HTTP Method
+* Servlet Container
+
 ## Usage
 
 ```ruby
